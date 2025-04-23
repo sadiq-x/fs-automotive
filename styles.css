@@ -118,10 +118,34 @@ nav {
     margin: auto;
 }
 
+.img-sobrenos {
+    height: 150px;
+    width: 150px;
+    margin: auto;
+    display: block;
+    margin-bottom: 25px;
+    border-radius: 50%;
+    opacity: 0.9;
+}
+
+.img-sobrenos:hover {
+    opacity: 1;
+    border: 2px solid black;
+
+}
+
 .sobre-logo {
     margin-bottom: 50px;
     width: 220px;
     height: 100;
+}
+
+.sobre-img {
+    margin-bottom: 25px;
+    width: 100%;
+    height: auto;
+    border-top: 3px solid red;
+    border-bottom: 3px solid red;
 }
 
 h1 {
