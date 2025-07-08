@@ -1,11 +1,24 @@
 document.querySelectorAll('.service-title').forEach(button => {
   button.addEventListener('click', () => {
     const description = button.nextElementSibling;
+    const icon = button.querySelector('.toggle-icon');
+    const titleText = button.querySelector('.title-text');
+
     description.classList.toggle('show');
+
+    // Alternar ícone
+    icon.textContent = description.classList.contains('show') ? '−' : '+';
+
+    // Alterar cor do texto
+    if (description.classList.contains('show')) {
+      titleText.style.color = 'red';
+    } else {
+      titleText.style.color = ''; // volta à cor padrão definida no CSS
+    }
   });
 });
 
-(function() {
+(function () {
   const track = document.getElementById('carouselTrack');
   const images = track.getElementsByTagName('img');
   const totalImages = images.length;

@@ -52,11 +52,7 @@ h1 {
     margin-bottom: 10px;
 }
 
-h2 {
-    font-size: 1.5rem;
-    color: black;
-    margin-bottom: 10px;
-}
+
 
 /* Navbar */
 /* Logo inside navbar */
@@ -121,8 +117,48 @@ h2 {
 
 /* Navbar Mobile*/
 .nav-mobile-bottom {
-    display: none;
-    /* Só vai aparecer em mobile */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: #fff;
+    padding: 0.5rem 0;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+.nav-item {
+    flex: 1;
+    text-align: center;
+    text-decoration: none;
+    color: #333;
+    font-size: 0.9rem;
+    padding: 0.8rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease, color 0.2s ease;
+    min-height: 60px;
+    /* Tamanho confortável para toque */
+}
+
+.nav-item:hover {
+    background-color: #f1f1f1;
+    color: #d10000;
+}
+
+.nav-emoji {
+    font-size: 1.5rem;
+    line-height: 1;
+    margin-bottom: 0.2rem;
+}
+
+.nav-label {
+    font-size: 0.8rem;
+    font-weight: 500;
 }
 
 /* Content home page*/
@@ -132,11 +168,47 @@ h2 {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+.content-home-section {
+    padding: 10px;
+    background: white;
+    margin: 20px auto;
+    max-width: 80%;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.content-home-section p {
+    font-size: 1rem;
+    text-align: center;
+    margin: 8px 0px;
+}
+
+.home-title {
+    font-size: 1.8rem;
+    color: #2b2b2b;
+    margin-bottom: 1rem;
+    text-align: center;
+    position: relative;
+}
+
+.home-title::after {
+    content: "";
+    width: 60px;
+    height: 4px;
+    background: #ff5722;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+
+
 /* Images scroll */
 .content-home-carousel {
     width: 100vw;
     height: 70vh;
-    /* altura fixa */
     overflow: hidden;
     position: relative;
 }
@@ -152,9 +224,7 @@ h2 {
     flex-shrink: 0;
     width: 100vw;
     height: 70vh;
-    /* mesm altura que container */
     object-fit: cover;
-    /* mantém proporção e corta o excesso */
 }
 
 /* Content service page*/
@@ -167,12 +237,8 @@ h2 {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.content-services-servicos {
-    display: inline-flex;
-}
-
-.content-services-servicos h1 {
-    margin: 5px;
+.content-services:hover {
+    transform: translateY(-5px);
 }
 
 .services-icon {
@@ -181,7 +247,6 @@ h2 {
     margin: auto;
 }
 
-/* Services */
 .services-container {
     max-width: 800px;
     margin: 0 auto;
@@ -203,6 +268,15 @@ h2 {
     border: none;
     cursor: pointer;
     font-size: 0.9rem;
+
+    display: flex;
+    justify-content: space-between;
+    /* Alinha texto à esquerda, ícone à direita */
+    align-items: center;
+}
+
+.service-title:hover {
+    color: red;
 }
 
 .service-description {
@@ -214,67 +288,41 @@ h2 {
 
 .service-description.show {
     max-height: 200px;
-    /* ajusta conforme o conteúdo */
     padding: 25px;
 }
 
-/* Cars */
-.content-car {
-    display: flex;
-    justify-content: center;
-    margin: 20px auto;
-}
-
-.content-car-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    text-align: center;
-}
-
-.content-car-list li {
-    margin: 0.5em 0;
-}
-
-.highlighted-car-list {
-    text-align: center;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.highlighted-car-list li {
-    padding: 15px;
-    border-bottom: 2px solid #f0f0f0;
-    font-size: 20px;
-    color: #333;
+.toggle-icon {
     font-weight: bold;
-    transition: background-color 0.3s, transform 0.3s;
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
 }
 
-.highlighted-car-list li:last-child {
-    border-bottom: none;
+.vehicle-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 1.5rem;
+    justify-items: center;
+    align-items: center;
+    padding: 2rem;
 }
 
-.highlighted-car-list li:hover {
-    background-color: #f8e1d4;
-    transform: translateX(5px);
+.vehicle-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.vehicle-icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 0.5rem;
 }
 
 .vehicle-type {
-    color: #333;
-    display: inline-block;
-    text-transform: capitalize;
-    transition: color 0.3s;
+    font-weight: bold;
+    font-size: 0.9rem;
 }
-
-
-
-
-
 
 /* Footer */
 .footer-social-icons a img {
@@ -310,6 +358,10 @@ h2 {
     display: block;
 }
 
+.maps p {
+    text-align: center;
+}
+
 .maps a {
     text-decoration: none;
     color: white;
@@ -321,55 +373,138 @@ h2 {
     font-size: 15px;
 }
 
+/* Content about us page */
+.content-aboutus {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 3rem 2rem;
 
+    border-radius: 1rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    font-family: 'Segoe UI', sans-serif;
+}
 
+.about-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 2px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+}
 
+.about-card:hover {
+    transform: translateY(-5px);
+}
 
+.about-card-img {
+    width: 100%;
+    height: auto;
+    margin-top: 1rem;
+    object-fit: cover;
+    max-height: 250px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
 
+.about-card p {
+    padding: 10px 0px;
+    text-align: justify;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-/* Content about us page*/
-.img-sobrenos {
-    height: 150px;
-    width: 150px;
-    margin: auto;
+.about-logo {
+    max-width: 150px;
+    margin: 0 auto 1rem;
     display: block;
-    margin-bottom: 25px;
-    border-radius: 50%;
-    opacity: 0.9;
+    filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.2));
 }
 
-.img-sobrenos:hover {
-    opacity: 1;
-    border: 2px solid black;
+.about-title {
+    font-size: 1.8rem;
+    color: #2b2b2b;
+    margin-bottom: 1rem;
+    text-align: center;
+    position: relative;
+}
+
+.about-title::after {
+    content: "";
+    width: 60px;
+    height: 4px;
+    background: #ff5722;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+.service-list,
+.schedule-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 1rem;
+}
+
+.service-list li,
+.schedule-list li {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    color: #333;
+    display: flex;
+    align-items: center;
+}
+
+.emoji {
+    font-size: 1.4rem;
+    margin-right: 0.5rem;
+    min-width: 1.5rem;
+}
+
+/* Content contacts page */
+
+.content-contact {
+    padding: 10px;
+    background: white;
+    margin: 20px auto;
+    max-width: 80%;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.content-contact p {
+    text-align: center;
+}
+
+.content-contact-maps {
+    padding: 10px;
+    background: white;
+    margin: 20px auto;
+    max-width: 80%;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 
 }
 
+.contact-title {
+    font-size: 1.8rem;
+    color: #2b2b2b;
+    margin-bottom: 1rem;
+    text-align: center;
+    position: relative;
+}
 
-
-
-
-/* Botões */
-
-
-
-
-
-
-
-
-
-@media (min-width: 500px) {}
+.contact-title::after {
+    content: "";
+    width: 60px;
+    height: 4px;
+    background: #ff5722;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
 
 /* Mobile design responsive */
 @media (max-width: 768px) {
@@ -377,7 +512,6 @@ h2 {
     /* Navbar */
     header {
         justify-content: center;
-        /* centra tudo */
     }
 
     footer {
@@ -386,12 +520,10 @@ h2 {
 
     nav {
         display: none;
-        /* esconde menu */
     }
 
     .nav-logo {
         justify-content: center;
-        /* centra logo */
         width: 100%;
     }
 
@@ -451,7 +583,6 @@ h2 {
         height: 40vh;
     }
 
-
     /* Content service page*/
     .content-services {
         padding: 10px;
@@ -480,5 +611,44 @@ h2 {
     .footer-social-icons a {
         padding-bottom: 50px;
         padding: 0px 3px;
+    }
+
+    /* Content about us page*/
+    .content-aboutus {
+        padding: 2rem 1rem;
+    }
+
+    .about-title {
+        font-size: 1.5rem;
+    }
+
+    .about-card {
+        padding: 1.5rem;
+    }
+
+    .about-card p {
+        font-size: 0.9rem;
+    }
+
+    /* Content home page */
+    .content-home-section p {
+        font-size: 0.9rem;
+    }
+
+    .home-title {
+        font-size: 1.5rem;
+    }
+
+    /* Content contact page */
+    .contact-title {
+        font-size: 1.5rem;
+    }
+
+    .content-contact p {
+        font-size: 0.9rem;
+    }
+
+    .content-contact-info {
+        font-size: 0.8rem;
     }
 }
