@@ -652,3 +652,9 @@ h1 {
         font-size: 0.8rem;
     }
 }
+
+@media (min-width: 769px) {
+    .nav-mobile-bottom {
+        display: none;
+    }
+}
