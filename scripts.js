@@ -20,24 +20,21 @@ document.querySelectorAll('.service-title').forEach(button => {
 
 (function () {
   const track = document.getElementById('carouselTrack');
-  const images = track.getElementsByTagName('img');
-  const totalImages = images.length;
+  const images = track.querySelectorAll('img');
+  const imageCount = images.length;
+  const imageWidth = images[0].clientWidth;
+
   let currentIndex = 0;
 
-  function slide() {
+  function moveCarousel() {
     currentIndex++;
-    if (currentIndex >= totalImages) {
-      currentIndex = 0;
+    if (currentIndex >= imageCount) {
+      currentIndex = 0; // Volta ao início
     }
-    track.style.transform = 'translateX(' + (-currentIndex * window.innerWidth) + 'px)';
+    track.style.transform = `translateX(-${currentIndex * imageWidth}px)`;
   }
 
-  // Avança slide a cada 3 segundos
-  setInterval(slide, 3000);
-
-  // Ajusta ao redimensionar janela
-  window.addEventListener('resize', () => {
-    track.style.transform = 'translateX(' + (-currentIndex * window.innerWidth) + 'px)';
-  });
+  // Muda de imagem a cada 3 segundos
+  setInterval(moveCarousel, 3000);
 })();
 
