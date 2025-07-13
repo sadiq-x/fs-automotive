@@ -18,6 +18,18 @@ document.querySelectorAll('.service-title').forEach(button => {
   });
 });
 
+function openModal(src) {
+  const modal = document.getElementById("imgModal");
+  const modalImg = document.getElementById("modalImg");
+  modalImg.src = src;
+  modal.style.display = "block";
+}
+
+function closeModal() {
+  const modal = document.getElementById("imgModal");
+  modal.style.display = "none";
+}
+
 (function () {
   const track = document.getElementById('carouselTrack');
   const images = track.querySelectorAll('img');
@@ -37,4 +49,10 @@ document.querySelectorAll('.service-title').forEach(button => {
   // Muda de imagem a cada 3 segundos
   setInterval(moveCarousel, 3000);
 })();
+
+
+
+
+
+
 

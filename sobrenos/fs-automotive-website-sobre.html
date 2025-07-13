@@ -17,7 +17,7 @@
         <!-- Navbar logo, with responsive design on device -->
         <div class="nav-logo">
             <a href="/"><img src="../img-fs-automotive/logo-fs-automotive/logo-fsautomotive-old-nobackground.png"
-                class="navbar-logo" alt="fs-automotive-logo"></a>
+                    class="navbar-logo" alt="fs-automotive-logo"></a>
         </div>
         <!-- Navbar desktop -->
         <nav>
@@ -58,7 +58,8 @@
             <br>
             <p>
                 A <strong>FS Automotive</strong> é uma oficina especializada na prestação de serviços
-                automotivos de alta qualidade, com uma equipa dedicada e experiente, liderada por <strong>Miguel Faria</strong>.
+                automotivos de alta qualidade, com uma equipa dedicada e experiente, liderada por <strong>Miguel
+                    Faria</strong>.
             </p>
             <p>
                 Desde a nossa fundação, temos como principal objetivo garantir a satisfação dos nossos clientes
@@ -85,15 +86,27 @@
                 <li><span class="emoji">🛋️</span><strong> Sala de Espera:</strong> Espaço confortável para aguardar
                     enquanto cuidamos do seu veículo.</li>
             </ul>
+
             <img src="../img-fs-automotive/img-oficina/fs-automotive-images-4.jpg" alt="fs-automotive-comodidades"
-                class="about-card-img" />
+                class="about-card-img" onclick="openModal(this.src)" />
+
         </div>
+
+        <div id="imgModal" class="modal" onclick="closeModal()">
+            <span class="close">&times;</span>
+            <img class="modal-content" id="modalImg" />
+        </div>
+
+        <script src="../scripts.js"></script>
 
         <div class="about-card">
             <h2 class="about-title">Horário de Funcionamento</h2>
             <ul class="schedule-list">
                 <br>
-                <li><span class="emoji">🕒</span><strong> Segunda a Sexta-feira:</strong> 08:30 - 13:00 | 14:30 - 18:30
+                <li class="horario">
+                    <span class="emoji">🕒</span>
+                    <strong>Segunda a Sexta-feira:</strong>
+                    <span class="periodos"> 08:30 - 13:00 | 14:30 - 18:30</span>
                 </li>
                 <li><span class="emoji">⛔</span><strong> Sábado:</strong> Fechado</li>
                 <li><span class="emoji">📅</span><strong> Domingo e Feriados:</strong> Fechado</li>
@@ -105,11 +118,14 @@
         <div class="social-maps">
             <div class="social-icons">
                 <a href="https://www.facebook.com/people/FSautomotive/100057153442586/" target="_blank"><img
-                        src="../icons-fs-automotive/fs-automotive-facebook.svg" alt="Facebook" class="social-svg"></a>
+                        src="../icons-fs-automotive/fs-automotive-facebook.svg" alt="fs-automotive-Facebook"
+                        class="social-svg"></a>
                 <a href="https://www.instagram.com/fs.automotive.oficina/" target="_blank"><img
-                        src="../icons-fs-automotive/fs-automotive-instagram.svg" alt="Instagram" class="social-svg"></a>
+                        src="../icons-fs-automotive/fs-automotive-instagram.svg" alt="fs-automotive-Instagram"
+                        class="social-svg"></a>
                 <a href="mailto:fsautomotive.servicos@gmail.com" target="_blank"><img
-                        src="../icons-fs-automotive/fs-automotive-gmail.svg" alt="Email" class="social-svg"></a>
+                        src="../icons-fs-automotive/fs-automotive-gmail.svg" alt="fs-automotive-Email"
+                        class="social-svg"></a>
             </div>
         </div>
         <p class="footer-txt">&copy; 2025 Fs Automotive. Todos os direitos reservados.</p>
