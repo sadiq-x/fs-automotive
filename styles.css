@@ -164,30 +164,53 @@ h1 {
 }
 
 /* Content home page*/
-.content-home {
-    text-align: center;
-    margin: 20px auto;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+.enhanced-home-section {
+    background: linear-gradient(135deg, #ffffff, #f7f7f7);
+    padding: 2rem;
+    border-radius: 10px;
+    max-width: 850px;
+    margin: 40px auto;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
 }
 
-.content-home-section {
-    padding: 10px;
-    background: white;
-    margin: 20px auto;
-    max-width: 80%;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+.enhanced-home-section:hover {
+    transform: translateY(-5px);
 }
 
-.content-home-section p {
-    font-size: 1rem;
-    text-align: center;
-    margin: 8px 0px;
+.home-intro {
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
     font-family: 'Montserrat', sans-serif;
 }
 
-.content-home-section-icon {
-    padding: 15px 0px;
+.home-highlight {
+    font-size: 1rem;
+    background: #fff4f4;
+    padding: 1rem;
+    border-left: 4px solid #d91c1f;
+    margin: 1rem 0;
+    font-family: 'Montserrat', sans-serif;
+    border-radius: 5px;
+}
+
+.highlight-word {
+    font-weight: bold;
+    color: #d91c1f;
+}
+
+.home-message {
+    font-size: 1rem;
+    margin: 10px 0;
+    font-family: 'Montserrat', sans-serif;
+    color: #333;
+}
+
+.home-message.emphasis {
+    font-style: italic;
+    color: #444;
+    font-weight: 500;
 }
 
 .home-title {
